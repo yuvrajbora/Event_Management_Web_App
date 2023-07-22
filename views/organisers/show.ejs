@@ -1,0 +1,9 @@
+<h2 class="page-header"><%=organiser.name%></h2>
+<div class="item row">
+<a href="/organisers/<%=organiser.id%>/edit" class="btn btn-primary">Edit</a>
+<!-- <%- include('../partials/deleteForm',{url:`/organisers/${organiser.id}`}) %> -->
+</div>
+<%if(eventsByOrganiser.length>0){%>
+    <h2  class="page-header">Events By Organiser</h2>
+    <%-include('../partials/eventGrid',{events: eventsByOrganiser})%>
+<%}%>

@@ -1,0 +1,19 @@
+<h2 class="page-header"><%=event.eventName%></h2>
+<div class="event-details">
+<div>
+    <img src="<%=event.coverImagePath%>" height="220" width="160"><br><br>
+    <!-- <a href="/events/<%=event.id%>/edit">Edit</a>
+        <%- include('../partials/deleteForm',{url:`/events/${event.id}`})%> -->
+        <a class="btn btn-primary" href='/organisers/<%=event.organiser.id%>'>View Organiser</a>
+</div>
+<div class="event-details-grid">
+    <div class="event-details-label">Organiser:</div>
+    <div><%=event.organiser.name%></div>
+    <div class="event-details-label">Event Date:</div>
+    <div><%=event.eventDate.toDateString()%></div>
+    <div class="event-details-label">Enry Fee:</div>
+    <div><%=event.entryFee%></div>
+    <div class="event-details-label">Description:</div>
+    <div><%=event.description%></div>
+</div>
+</div>

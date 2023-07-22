@@ -1,0 +1,40 @@
+<div class="form-row">
+    <div class="form-item">
+    <label>Event Name</label>
+    <input type="text" name="name" value="<%= event.eventName%>"><br>
+    </div>
+    <div class="form-item">
+    <label>Organiser</label>
+    <select name="organiser">
+    <% organisers.forEach(organiser =>{ %>
+        <% if(organiser.id === event.organiser) {%>
+            <option selected label="<%=organiser.name%>" value="<%= organiser.id %>">
+        <%} else {%>
+            <option selected label="<%=organiser.name%>" value="<%= organiser.id %>">
+        <%}%>
+    <% })%>
+    </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-item">
+    <label>Event Date</label>
+    <input type="date" name="eventDate" 
+        value="<%= event.eventDate==null ? '' :
+        event.eventDate.toISOString().split('T')[0] %>">
+    </div>
+    <div class="form-item"><label>Entry Fee</label>
+    <input type="number" name="entryFee" 
+       min="1" value="<%= event.entryFee %>">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-item form-item-no-grow"><label>Cover</label>
+    <input type="file" name="cover">
+    </div>
+    <div class="form-item"><label>Description</label>
+    <textarea name="description" 
+        value="<%= event.description %>"></textarea>
+    </div>
+</div>
+

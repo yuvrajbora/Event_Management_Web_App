@@ -1,0 +1,24 @@
+<h2 class="page-header">Search Organisers</h2>
+<form action="/organisers" method="GET">
+    <div class="form-row">
+    <div class="form-item">
+    <label >Name</label>
+    <input type="text" name="name" value="<%= searchOptions.name%>"></div></div>
+    <div class="form-row form-row-end">
+    <button type="submit" class="btn btn-primary">Search</button></form></div>
+
+</form><br>
+<% organisers.forEach(organiser=>{%>
+    <div class="organiser-row">
+    <div class="organiser-name"><%= organiser.name%>
+    </div>
+    <div class="btn-row">
+    <a class="btn btn-primary" href="/organisers/<%=organiser.id%>">View</a>
+    <a class="btn btn-primary" href="/organisers/<%=organiser.id%>/edit">Edit</a>
+    
+
+<!-- <%- include('../partials/deleteForm',{url:`/organisers/${organiser.id}`}) %> -->
+     </div>
+</div>
+
+    <%})%>
